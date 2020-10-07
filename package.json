@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/arunpk95/the-stage-api/issues"
   },
-  "homepage": "https://github.com/arunpk95/the-stage-api#readme"
+  "homepage": "https://github.com/arunpk95/the-stage-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.8"
+  }
 }
