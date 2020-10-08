@@ -120,7 +120,7 @@ exports.getByEmailPassword = (req, res) => {
             console.log(hash);
             if (hash === passwordFields[1]) 
             {
-                res.status(201).send({ status: "success", influencerAccount: {"email":users[0].email, "accessKey":users[0].accessKey} });
+                res.status(201).send({ status: "success", influencerAccount: {"email":users[0].email, "accessKey":users[0].accessKey,"id":users[0].id} });
                 return;
             }
             else
