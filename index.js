@@ -20,8 +20,9 @@ app.get('/inf/login', (req, res) => {
     res.sendFile(path.join(__dirname, './pages/influencers/login.html'))
 });
 
-
-app.listen(3000, () => {
+//since heroku adds dynamic por. change the env port
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
     console.log("Server running on port 3000");
 });
 
