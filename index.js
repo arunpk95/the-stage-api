@@ -4,11 +4,12 @@ const bodyParser = require('body-parser');
 
 
 const InfluencerAccountRouter = require('./influencerAccounts/routes.config');
+const LinksRouter = require('./links/routes.config')
 
 app.use(bodyParser.json());
 
 InfluencerAccountRouter.routesConfig(app);
-
+LinksRouter.routesConfig(app);
 
 const path = require('path');
 

@@ -32,7 +32,7 @@ exports.createInfluencer = (userData) => {
 };
 
 exports.getInfluencerByEmailIgnoreCase =  (email) => {
-    const result =  InfluencerAccount.find({ email: { $regex: new RegExp("^" + email.toLowerCase(), "i") } });
+    const result =  InfluencerAccount.find({ "email": { $regex: new RegExp("^" + email.toLowerCase(), "i") } });
     return result;
 };
 
