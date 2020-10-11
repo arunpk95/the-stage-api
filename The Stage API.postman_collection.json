@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "533f5052-17d7-45b3-97d0-bb5a13cc7a10",
+		"_postman_id": "d96656bd-e10c-4af8-90c7-015ab25e7f74",
 		"name": "The Stage API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -15,7 +15,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"arunpk95@gmail.com\",\r\n    \"password\": \"000000\"\r\n}"
+							"raw": "{\r\n    \"email\": \"arunpk95@gmail.com\",\r\n    \"password\": \"000000a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{api-domain}}/user/login",
@@ -38,7 +43,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Arun P K\",\r\n    \"type\": \"business\",\r\n    \"email\": \"arunpk95@gmail.com\",\r\n    \"password\": \"000000a\",\r\n    \"c_password\": \"000000a\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Arun P K\",\r\n    \"type\": \"business\",\r\n    \"email\": \"ashok@gmail.com\",\r\n    \"password\": \"000000a\",\r\n    \"c_password\": \"000000a\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -194,7 +199,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"user_id\":\"hjasbdfhabsdj\",\r\n  \"display_text\":\"This is new Link\",\r\n  \"url\":\"https://google.com\",\r\n  \"scheduled\":false,\r\n  \"scheduled_from\":\"\",\r\n  \"scheduled_to\":\"\",\r\n  \"scheduled_timezone\":\"IST\",\r\n  \"has_thumb\":false,\r\n  \"thumb_url\":\"\",\r\n  \"status\": \"active\"\r\n}",
+							"raw": "{\r\n  \"displayText\":\"This is new Link\",\r\n  \"url\":\"https://google.com\",\r\n  \"scheduled\":false,\r\n  \"scheduledFrom\":\"\",\r\n  \"scheduledTo\":\"\",\r\n  \"scheduledTimezone\":\"IST\",\r\n  \"hasThumb\":false,\r\n  \"thumbUrl\":\"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -250,7 +255,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"user_id\":\"hjasbdfhabsdj\"\r\n}",
+							"raw": "{\r\n    \"status\":[\"active\",\"inactive\",\"archieved\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -278,7 +283,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\":\"kjadbfjasbdf\",\r\n    \"slug\":\"arun\"\r\n}",
+							"raw": "{\r\n    \"slug\":\"arun\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -325,6 +330,36 @@
 								"link",
 								"{link_id}",
 								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/{user_id}/link/{link_id}/delete",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"{user_id}",
+								"link",
+								"{link_id}",
+								"delete"
 							]
 						}
 					},
