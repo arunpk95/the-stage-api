@@ -28,11 +28,11 @@ exports.getLinksByUserId = (userId,status) => {
     const links = LinksSchema.find({"userId":userId,"status":{$in:status}});
     return links;
 }
-exports.updateLink = (id,linkData) => {
-    const result =  LinksSchema.findOneAndUpdate ({_id:id},linkData,{new: true});
+exports.updateLink = (userId,id,linkData) => {
+    const result =  LinksSchema.findOneAndUpdate ({_id:id,  userId:userId},linkData,{new: true});
     return result;    
 }
-exports.deleteLink = (id) => {
-    const result = LinksSchema.findOneAndUpdate({_id:id},{"status":"archieved"});
+exports.deleteLink = ( userId, id) => {
+    const result = LinksSchema.findOneAndUpdate({_id:id, userId:userId},{"status":"archieved"},{new: true});
     return result;
 }

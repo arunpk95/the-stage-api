@@ -16,10 +16,11 @@ const influencerAccountSchema = new Schema({
     accessKey: String,
     isBusiness: String,
     countryCode: Number,
-    phone: String
+    phone: String,
+    slug: {type: String, default: ""}
 });
 
-const InfluencerAccount = mongoose.model('influencerAccounts', influencerAccountSchema);
+const InfluencerAccount = mongoose.model('influenceraccounts', influencerAccountSchema);
 
 exports.createInfluencer = (userData) => {
     let salt = crypto.randomBytes(16).toString('base64');
@@ -41,4 +42,14 @@ exports.getInfluencerById =  (id) => {
         return result;    
 };
 
+exports.getUserforLinksSlug = (slug) => {
+    const result = InfluencerAccount.findOne({"slug":slug});
+   console.log(result)
+    return result;
+}
+
+exports.updateUser = (id,newData) => {
+    const result = InfluencerAccount.findOneAndUpdate({_id:id},newData,{new: true});
+    return result;
+}
 

@@ -24,6 +24,7 @@ exports.insert = (req, res) => {
     req.body.activationKey = "";
     req.body.lastStatusChanged = Date.now();
 
+
     
     //0 - check if email already exists
     InfluencerAccountsModel.getInfluencerByEmailIgnoreCase(req.body.email)
