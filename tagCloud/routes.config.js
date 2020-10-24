@@ -9,7 +9,7 @@ exports.routesConfig = function (app) {
         TagClougController.delete
     ]);
     app.post('/api/user/:user_id/tagcloud/:tagcloud_id/update', [
-        TagClougController.updateLink
+        TagClougController.updateTagCloud
     ]);
     app.post('/api/user/:user_id/tagcloud/all', [
         TagClougController.fectchForUserId

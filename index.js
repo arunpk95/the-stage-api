@@ -6,13 +6,14 @@ var UploadFile = require('./common/file.upload')
 
 const InfluencerAccountRouter = require('./influencerAccounts/routes.config');
 const LinksRouter = require('./links/routes.config')
-
+const TagCloudRouter = require('./tagCloud/routes.config')
 app.use(bodyParser.json());
 //for forms
 //app.use(express.urlencoded());
 
 InfluencerAccountRouter.routesConfig(app);
 LinksRouter.routesConfig(app);
+TagCloudRouter.routesConfig(app);
 
 const path = require('path');
 

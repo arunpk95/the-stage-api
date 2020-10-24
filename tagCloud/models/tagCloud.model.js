@@ -7,7 +7,7 @@ const TagCloudSchema = new Schema({
     name : String,
     text: String,
     status:{type:String,default:"active"},
-    lastUpdatedOn:{ type: Date, default: Date.now}
+    changed_at:{ type: Date, default: Date.now}
 })
 
 const TagCloud = mongoose.model('tagclouds',TagCloudSchema);
