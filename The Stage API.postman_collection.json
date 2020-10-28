@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"arunpk95@gmail.com\",\r\n    \"password\": \"000000a\"\r\n}",
+							"raw": "{\r\n    \"email\": \"ashok1@gmail.com\",\r\n    \"password\": \"000000a\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -43,7 +43,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Arun P K\",\r\n    \"type\": \"business\",\r\n    \"email\": \"ashok@gmail.com\",\r\n    \"password\": \"000000a\",\r\n    \"c_password\": \"000000a\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Arun P K\",\r\n    \"type\": \"business\",\r\n    \"email\": \"ashok1@gmail.com\",\r\n    \"password\": \"000000a\",\r\n    \"c_password\": \"000000a\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -100,7 +100,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": \"hjasbdfhabsdj\",\r\n    \"name\": \"Travel\",\r\n    \"text\": \"#photography #wildlife #nature\",\r\n    \"changed_at\": \"12:12:2020 12:12:12 IST\",\r\n    \"status\": \"active\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Fitness\",\r\n    \"text\": \"#photography #wildlife #nature\",\r\n    \"status\": \"active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -108,14 +108,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{api-domain}}/user/{user_id}/taggroup/add",
+							"raw": "{{api-domain}}/user/5f7e23e59458c54a7c5e5666/tagcloud/add",
 							"host": [
 								"{{api-domain}}"
 							],
 							"path": [
 								"user",
-								"{user_id}",
-								"taggroup",
+								"5f7e23e59458c54a7c5e5666",
+								"tagcloud",
 								"add"
 							]
 						}
@@ -129,7 +129,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": \"hjasbdfhabsdj\",\r\n    \"name\": \"Travel\",\r\n    \"text\": \"#photography #wildlife #nature\",\r\n    \"changed_at\": \"12:12:2020 12:12:12 IST\",\r\n    \"status\": \"delete\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Travel12\",\r\n    \"text\": \"#photography #wildlife #nature\",\r\n    \"status\": \"active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -137,16 +137,75 @@
 							}
 						},
 						"url": {
-							"raw": "{{api-domain}}/user/{user_id}/taggroup/{taggroup_id}/update",
+							"raw": "{{api-domain}}/user/5f7e23e59458c54a7c5e5666/tagcloud/5f938d934d5e482af8a70985/update",
 							"host": [
 								"{{api-domain}}"
 							],
 							"path": [
 								"user",
-								"{user_id}",
-								"taggroup",
-								"{taggroup_id}",
+								"5f7e23e59458c54a7c5e5666",
+								"tagcloud",
+								"5f938d934d5e482af8a70985",
 								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete TagCloud",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/5f7e23e59458c54a7c5e5666/tagcloud/5f938d934d5e482af8a70985/delete",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"5f7e23e59458c54a7c5e5666",
+								"tagcloud",
+								"5f938d934d5e482af8a70985",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get TagClouds of User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/5f7e23e59458c54a7c5e5666/tagcloud/all",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"5f7e23e59458c54a7c5e5666",
+								"tagcloud",
+								"all"
 							]
 						}
 					},
@@ -164,8 +223,26 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"user_id\":\"ansdfiansdfinasidnfasndiani\"\r\n}",
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "myimg",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Desktop/cancel.png"
+								},
+								{
+									"key": "type",
+									"value": "image",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "uploadedFor",
+									"value": "linkThumb",
+									"contentType": "",
+									"type": "text"
+								}
+							],
 							"options": {
 								"raw": {
 									"language": "json"
@@ -173,13 +250,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{api-domain}}/media/add",
+							"raw": "{{api-domain}}/uploadFile",
 							"host": [
 								"{{api-domain}}"
 							],
 							"path": [
-								"media",
-								"add"
+								"uploadFile"
 							]
 						},
 						"description": "Uploads media and stores to 'medias' collection"
@@ -199,7 +275,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"displayText\":\"This is new Link\",\r\n  \"url\":\"https://google.com\",\r\n  \"scheduled\":false,\r\n  \"scheduledFrom\":\"\",\r\n  \"scheduledTo\":\"\",\r\n  \"scheduledTimezone\":\"IST\",\r\n  \"hasThumb\":false,\r\n  \"thumbUrl\":\"\"\r\n}",
+							"raw": "{\r\n  \"displayText\":\"hey, This is new Link\",\r\n  \"url\":\"https://google.com\",\r\n  \"scheduled\":false,\r\n  \"scheduledFrom\":\"\",\r\n  \"scheduledTo\":\"\",\r\n  \"scheduledTimezone\":\"IST\",\r\n  \"hasThumb\":false,\r\n  \"thumbUrl\":\"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -207,13 +283,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{api-domain}}/user/{user_id}/link/add",
+							"raw": "{{api-domain}}/user/5f7e23e59458c54a7c5e5666/link/add",
 							"host": [
 								"{{api-domain}}"
 							],
 							"path": [
 								"user",
-								"{user_id}",
+								"5f7e23e59458c54a7c5e5666",
 								"link",
 								"add"
 							]
@@ -228,7 +304,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"slug\":\"arun\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -236,13 +312,42 @@
 							}
 						},
 						"url": {
-							"raw": "{{api-domain}}/slug/allLinks",
+							"raw": "{{api-domain}}/links/slug/new",
 							"host": [
 								"{{api-domain}}"
 							],
 							"path": [
+								"links",
 								"slug",
-								"allLinks"
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update slug for user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"slug\":\"arun1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/5f7f676b24aebd001702df17/updateslug",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"5f7f676b24aebd001702df17",
+								"updateslug"
 							]
 						}
 					},
@@ -263,14 +368,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{api-domain}}/user/{user_id}/allLinks",
+							"raw": "{{api-domain}}/user/5f7e23e59458c54a7c5e5666/links/all",
 							"host": [
 								"{{api-domain}}"
 							],
 							"path": [
 								"user",
-								"{user_id}",
-								"allLinks"
+								"5f7e23e59458c54a7c5e5666",
+								"links",
+								"all"
 							]
 						}
 					},
@@ -312,7 +418,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"user_id\":\"hjasbdfhabsdj\",\r\n  \"display_text\":\"This is new Link\",\r\n  \"url\":\"https://google.com\",\r\n  \"scheduled\":false,\r\n  \"scheduled_from\":\"\",\r\n  \"scheduled_to\":\"\",\r\n  \"scheduled_timezone\":\"IST\",\r\n  \"has_thumb\":false,\r\n  \"thumb_url\":\"\",\r\n  \"status\": \"active\"\r\n}",
+							"raw": "{\r\n  \"displayText\":\"hey new arun, This is new Link\",\r\n  \"url\":\"https://google.com\",\r\n  \"scheduled\":false,\r\n  \"scheduledFrom\":\"\",\r\n  \"scheduledTo\":\"\",\r\n  \"scheduledTimezone\":\"IST\",\r\n  \"hasThumb\":false,\r\n  \"thumbUrl\":\"\",\r\n  \"status\":\"active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -320,15 +426,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{api-domain}}/user/{user_id}/link/{link_id}/update",
+							"raw": "{{api-domain}}/user/5f7e23e59458c54a7c5e5666/link/5f8b81dd4807bb2b9448535f/update",
 							"host": [
 								"{{api-domain}}"
 							],
 							"path": [
 								"user",
-								"{user_id}",
+								"5f7e23e59458c54a7c5e5666",
 								"link",
-								"{link_id}",
+								"5f8b81dd4807bb2b9448535f",
 								"update"
 							]
 						}
@@ -350,15 +456,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{api-domain}}/user/{user_id}/link/{link_id}/delete",
+							"raw": "{{api-domain}}/user/5f7e23e59458c54a7c5e5666/link/5f8b81dd4807bb2b9448535f/delete",
 							"host": [
 								"{{api-domain}}"
 							],
 							"path": [
 								"user",
-								"{user_id}",
+								"5f7e23e59458c54a7c5e5666",
 								"link",
-								"{link_id}",
+								"5f8b81dd4807bb2b9448535f",
 								"delete"
 							]
 						}
