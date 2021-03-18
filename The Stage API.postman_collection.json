@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "d96656bd-e10c-4af8-90c7-015ab25e7f74",
+		"name": "The Stage API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Login ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"arunpk95@gmail.com\",\r\n    \"password\": \"000000a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/login",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						},
+						"description": "Login with email and passoword\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Arun P K\",\r\n    \"type\": \"business\",\r\n    \"email\": \"ashok@gmail.com\",\r\n    \"password\": \"000000a\",\r\n    \"c_password\": \"000000a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/add",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"add"
+							]
+						},
+						"description": "Add new user and send activation email"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"arunpk95@gmail.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/forgotPassword",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"forgotPassword"
+							]
+						},
+						"description": "Forgot passoword with email"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tag Management",
+			"item": [
+				{
+					"name": "Add Tag Group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"hjasbdfhabsdj\",\r\n    \"name\": \"Travel\",\r\n    \"text\": \"#photography #wildlife #nature\",\r\n    \"changed_at\": \"12:12:2020 12:12:12 IST\",\r\n    \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/{user_id}/taggroup/add",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"{user_id}",
+								"taggroup",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tag Group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"hjasbdfhabsdj\",\r\n    \"name\": \"Travel\",\r\n    \"text\": \"#photography #wildlife #nature\",\r\n    \"changed_at\": \"12:12:2020 12:12:12 IST\",\r\n    \"status\": \"delete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/{user_id}/taggroup/{taggroup_id}/update",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"{user_id}",
+								"taggroup",
+								"{taggroup_id}",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Media Management",
+			"item": [
+				{
+					"name": "Upload media",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":\"ansdfiansdfinasidnfasndiani\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/media/add",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"media",
+								"add"
+							]
+						},
+						"description": "Uploads media and stores to 'medias' collection"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Link Management",
+			"item": [
+				{
+					"name": "Add Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"displayText\":\"This is new Link\",\r\n  \"url\":\"https://google.com\",\r\n  \"scheduled\":false,\r\n  \"scheduledFrom\":\"\",\r\n  \"scheduledTo\":\"\",\r\n  \"scheduledTimezone\":\"IST\",\r\n  \"hasThumb\":false,\r\n  \"thumbUrl\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/{user_id}/link/add",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"{user_id}",
+								"link",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Links of a slug",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"slug\":\"arun\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/slug/allLinks",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"slug",
+								"allLinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Links of User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":[\"active\",\"inactive\",\"archieved\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/{user_id}/allLinks",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"{user_id}",
+								"allLinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Slug of User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"slug\":\"arun\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/{user_id}/slug/update",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"{user_id}",
+								"slug",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\":\"hjasbdfhabsdj\",\r\n  \"display_text\":\"This is new Link\",\r\n  \"url\":\"https://google.com\",\r\n  \"scheduled\":false,\r\n  \"scheduled_from\":\"\",\r\n  \"scheduled_to\":\"\",\r\n  \"scheduled_timezone\":\"IST\",\r\n  \"has_thumb\":false,\r\n  \"thumb_url\":\"\",\r\n  \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/{user_id}/link/{link_id}/update",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"{user_id}",
+								"link",
+								"{link_id}",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-domain}}/user/{user_id}/link/{link_id}/delete",
+							"host": [
+								"{{api-domain}}"
+							],
+							"path": [
+								"user",
+								"{user_id}",
+								"link",
+								"{link_id}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
